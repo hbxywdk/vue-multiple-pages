@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack-config-dev.js --progress --color",
-    "build-dev": "webpack --config ./webpack-config-dev.js --env.environment=dev --progress --color",
-    "build-uat": "webpack --config ./webpack-config-dev.js --env.environment=uat --progress --color",
+    "dev": "webpack-dev-server --config ./webpack-config-dev.js --env.environment=dev --progress --color",
+    "build-dev": "webpack --config ./webpack-config-build.js --env.environment=dev --progress --color",
+    "build-uat": "webpack --config ./webpack-config-build.js --env.environment=uat --progress --color",
     "test": "node ./webpack-config-dev.js"
   },
   "author": "wdk",
@@ -29,12 +29,14 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.2",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2",
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
-    "babel-loader": "^8.0.0-beta.0",
+    "babel-loader": "^8.0.0-beta.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.16"
   }
 }
