@@ -5,6 +5,8 @@
 		</div>
 		
 		<a href="/page2/page2.html">page2</a>
+		<div class="bg"></div>
+		<img src="../../assets/images/git.jpg" />
 	</div>
 </template>
 
@@ -34,5 +36,11 @@ export default {
 	.w{
 		font-size: 30px;
 	}
+}
+.bg{
+	width: 200px;
+	height: 200px;
+	background: url(../../assets/images/git.jpg);
+	background-size: 100% 100%;
 }
 </style>

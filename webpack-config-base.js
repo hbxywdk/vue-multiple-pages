@@ -12,6 +12,7 @@ const pagePath = './src/page/';
 const entryFolders = glob.sync(`${pagePath}/*`);
 // console.log(entryFolders); //[ './src/page/page1', './src/page/page2' ]
 
+// 多页入口
 const entrys = (() => {
   let entry = {};
   entryFolders.forEach((e, i) => {
@@ -23,6 +24,7 @@ const entrys = (() => {
   return entry;
 })();
 
+// html插件
 const htmlWebpackPlugins = (() => {
   let htmls = [];
   entryFolders.forEach((e, i) => {
@@ -46,11 +48,14 @@ module.exports = {
     filename: '[name].[hash].js',
     path: __dirname + '/dist',
     chunkFilename: '[name].js',
+    publicPath: '/'
+    // assetsPublicPath: './'
   },
   resolve:{
     extensions: ['.js','.json','.css' ,'.less' ,'.sass','.scss','.vue'],
     alias: {
-        'vue$': 'vue/dist/vue.esm.js' // vue
+      'vue$': 'vue/dist/vue.esm.js', // vue
+      // 'assets': path.resolve(__dirname, './src/assets/images')
     }
   },
   module: {
@@ -138,7 +143,7 @@ module.exports = {
           name: 'vue2',
           priority: 1,
         },
-        axios: { // 要引用webpack才会打包
+        axios: { // 引用才会打包
           chunks: "initial",
           test: /[\\/]node_modules[\\/]axios[\\/]/,
           name: 'axios',
