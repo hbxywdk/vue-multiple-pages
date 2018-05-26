@@ -7,6 +7,7 @@
     "dev": "webpack-dev-server --config ./webpack-config-dev.js --env.environment=dev --progress --color",
     "build-dev": "webpack --config ./webpack-config-build.js --env.environment=dev --progress --color",
     "build-uat": "webpack --config ./webpack-config-build.js --env.environment=uat --progress --color",
+    "build-pro": "webpack --config ./webpack-config-build.js --env.environment=pro --progress --color",
     "test": "node ./webpack-config-dev.js"
   },
   "author": "wdk",
@@ -38,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
   }
 }

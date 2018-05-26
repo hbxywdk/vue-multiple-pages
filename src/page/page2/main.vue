@@ -4,7 +4,7 @@
 			{{ msg }}
 		</div>
 		
-		<a href="/page1/page1.html">page2</a>
+  		<router-view></router-view>
 	</div>
 </template>
 
@@ -18,7 +18,7 @@ console.log('baseUrl in Vue', config.baseUrl)
 export default {
 	data () {
 		return {
-			msg: 'This is page two!'
+			msg: 'This is Main!'
 		}
 	},
 	created () {
